@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    // Не столь важно указывать, так как собираем с помощью webpack
+    "outDir": "./dist/",
+    // Если нет явного указания типа
+    "noImplicitAny": true,
+    // Модульная система
+    "module": "ESNext",
+    // В какую спецификацию компилируем
+    "target": "es5",
+    "jsx": "react-jsx",
+
+    // Компилятор, обрабатывает не только TS файлы, но JS файлы
+    "allowJs": true,
+    "moduleResolution": "node",
+
+    // Делают импорты привычными.
+    // Вместо import * as webpack from 'webpack'; можно писать import webpack from 'webpack';
+    // Если какая-либо библиотека не имеет default import, то прелоадеры ts-loader, babel-loader автоматически создают вместо такого импорта
+    "allowSyntheticDefaultImports": true,
+
+    // esModuleInterop позволяет работать с пакетами, которые используют commonjs
+    // как с обычными пакетами с помощью import (require() module.export) = common js
+    // import Moment from 'moment';
+    // Без флага esModuleInterop результат undefined
+    // А с флагом [object Object]
+    "esModuleInterop": true,
+
+    // // Для абсолютного пути
+    // "baseUrl": "."
+    "typeRoots": ["src/global.d.ts"]
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
