@@ -26,8 +26,12 @@
     // А с флагом [object Object]
     "esModuleInterop": true,
 
-    // // Для абсолютного пути
-    // "baseUrl": "."
+    // Для абсолютного пути
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
+
     "typeRoots": ["src/global.d.ts"]
   },
   "ts-node": {
