@@ -13,6 +13,7 @@
     // Компилятор, обрабатывает не только TS файлы, но JS файлы
     "allowJs": true,
     "moduleResolution": "node",
+    "types": ["node", "jest"],
 
     // Делают импорты привычными.
     // Вместо import * as webpack from 'webpack'; можно писать import webpack from 'webpack';
@@ -32,11 +33,13 @@
       "*": ["./src/*"]
     },
 
-    "typeRoots": ["src/global.d.ts"]
+    "typeRoots": ["src/global.d.ts", "node_modules/@types"]
+    // "types": []
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
+      "types": ["@types/jest", "node"]
     }
   }
 }
