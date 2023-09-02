@@ -8,26 +8,27 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 // for passing in lng and translations on init
 
 i18n
-  // load translation using http -> see /public/locales (i.e. https://github.com/i18next/react-i18next/tree/master/example/react/public/locales)
-  // learn more: https://github.com/i18next/i18next-http-backend
-  // want your translations to be loaded from a professional CDN? => https://github.com/locize/react-tutorial#step-2---use-the-locize-cdn
+// load translation using http -> see /public/locales (i.e. https://github.com/i18next/react-i18next/tree/master/example/react/public/locales)
+// learn more: https://github.com/i18next/i18next-http-backend
+// want your translations to be loaded from a professional CDN? => https://github.com/locize/react-tutorial#step-2---use-the-locize-cdn
   .use(HttpApi)
-  // detect user language
-  // learn more: https://github.com/i18next/i18next-browser-languageDetector
-  // .use(resourcesToBackend((language, namespace) => import(`./locales/${language}/${namespace}.json`)))
-  // .use(
-  //   resourcesToBackend(
-  //     // @ts-ignore
-  //     (language, namespace) =>
-  //       import(`../../../../public/${language}/${namespace}.json`)
-  //   )
-  // )
+// detect user language
+// learn more: https://github.com/i18next/i18next-browser-languageDetector
+// .use(resourcesToBackend((language, namespace) => import(`./locales/${language}
+// /${namespace}.json`)))
+// .use(
+//   resourcesToBackend(
+//     // @ts-ignore
+//     (language, namespace) =>
+//       import(`../../../../public/${language}/${namespace}.json`)
+//   )
+// )
 
   .use(LanguageDetector)
-  // pass the i18n instance to react-i18next.
+// pass the i18n instance to react-i18next.
   .use(initReactI18next)
-  // init i18next
-  // for all options read: https://www.i18next.com/overview/configuration-options
+// init i18next
+// for all options read: https://www.i18next.com/overview/configuration-options
   .init({
     fallbackLng: 'en',
     debug: __IS_DEV__,

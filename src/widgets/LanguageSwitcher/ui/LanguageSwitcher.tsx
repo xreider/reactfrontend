@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import Languages from 'shared/assets/icons/languages.svg';
-import cls from './LanguageSwitcher.module.scss';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import cls from './LanguageSwitcher.module.scss';
 
 interface LanguageSwitcherProps {
-  className?: string;
+  className?: string
 }
 
 export const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
@@ -19,7 +19,8 @@ export const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
         i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
       }}
     >
-      <Languages fill={'var(--bg-color)'} />{' '}
+      <Languages fill="var(--bg-color)" />
+      {' '}
       <span style={{ color: 'var(--secondary-color)' }}>
         {t('Текущий язык')}
       </span>
