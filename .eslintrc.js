@@ -39,6 +39,12 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'i18next/no-literal-string': ['error', { markupOnly: true, onlyAttribute: [''] }],
+    'max-len': ['error', { code: 120, ignoreComments: true }],
+    'comma-style': ['error', 'last'],
+    'comma-dangle': 'off',
+    'linebreak-style': 'off',
+    'arrow-body-style': 'off',
+    'react/self-closing-comp': 'off'
   },
   globals: {
     __IS_DEV__: true,
