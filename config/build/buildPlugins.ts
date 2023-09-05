@@ -10,7 +10,8 @@ export function buildPlugins({
   paths,
   isDev,
 }: BuildOptions): WebpackPluginInstance[] {
-  return [
+
+  const plugins = [
     new webpack.ProgressPlugin(),
     new HTMLWebpackPlugin({
       template: paths.html,
@@ -23,13 +24,13 @@ export function buildPlugins({
       __IS_DEV__: JSON.stringify(isDev), // Необходимо в глобальных типах src\app\types\global.d.ts
       // прописать new webpack.DefinePlugin declare const __IS_DEV__: boolean;
     }),
-
     new ReactRefreshWebpackPlugin({}),
-    new webpack.HotModuleReplacementPlugin({
-      isDev,
-    }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false // Should use __IS_DEV__ variable?
-    })
-  ];
+  ]
+
+  if (isDev) {
+    plugins.push(new webpack.HotModuleReplacementPlugin({ isDev }))
+    plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: isDev }))  // Should use isDev variable?
+  }
+
+  return plugins;
 }
