@@ -46,7 +46,8 @@
     }
   },
   "include": [
-    "./src",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
     "node_modules/@types",
     "./config/jest/setupTests.ts"
   ],
