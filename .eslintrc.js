@@ -38,7 +38,11 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true, onlyAttribute: [''] }],
+    'i18next/no-literal-string': ['error', {
+      markupOnly: true,
+      onlyAttribute: [''],
+      ignoreCallee: ['render']
+    }],
     'max-len': ['error', { code: 120, ignoreComments: true }],
     'comma-style': ['error', 'last'],
     'comma-dangle': 'off',

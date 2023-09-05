@@ -33,13 +33,22 @@
       "*": ["./src/*"]
     },
 
-    "typeRoots": ["src/global.d.ts", "node_modules/@types"]
+    "typeRoots": ["src/global.d.ts", "node_modules/@types"],
     // "types": []
+
+
+
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS",
-      "types": ["@types/jest", "node"]
+      // "types": ["@types/jest", "node"]
     }
-  }
+  },
+  "include": [
+    "./src",
+    "node_modules/@types",
+    "./config/jest/setupTests.ts"
+  ],
+
 }
